@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>添加</button>
+<button>删除</button>
+<button>clone</button>
+<ul>
+    <li><a href="#">li1</a></li>
+    <li><a href="#">li2</a></li>
+    <li><a href="#">li3</a></li>
+    <li><a href="#">li4</a></li>
+    <li><a href="#">li5</a></li>
+    <li><a href="#">li6</a></li>
+    <li><a href="#">li7</a></li>
+    <li><a href="#">li8</a></li>
+    <li><a href="#">li9</a></li>
+</ul>
+<ol>
+
+</ol>
+<script src="../js/jquery-1.12.4.js"></script>
+<script>
+
+    $(function () {
+        $('button').click(function () {
+            console.log($('<li class="li1"><a href="#">这就是创建元素</a></li>'));
+            //ul进行追加元素
+            // $('ul').append($('<li class="li1"><a href="#">这就是创建元素</a></li>'));
+            // $('ul').append('<li class="li1"><a href="#">这就是创建元素</a></li>');
+
+            //添加元素
+            // $('ul').prepend('<li class="li1"><a href="#">这就是创建元素</a></li>');
+
+
+            //before与after
+            // $('ul').before('<h1>before</h1>');
+            // $('ul').after('<h1>after</h1>');
+
+        });
+
+        $('button').eq(1).click(function (){
+            //移除
+            // console.log($('li:first').remove());
+            //移除被选元素1
+            // console.log($('li:first').detach());
+
+            //清空被选元素1内容1
+            // console.log($('li:first').empty());
+            // console.log($('li:first').html(''));
+        });
+
+        //获取点击对象
+        $('li').click(function (){
+            console.log($(this).text());
+        });
+
+        $('button').eq(1).click(function (){
+            $('ol').append($('li:first').remove());
+        });
+
+        $('button').eq(2).click(function (){
+            $('ol').append($('li:first').clone());
+        });
+    });
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+  function Person(name,age){
+    this.name=name;
+    this.age=age;
+  }
+
+  Person.prototype.say_hi=function (){
+    console.log('你好');
+  }
+
+  function Student(name,age){
+      //this  新创建的学生
+    Person.call(this,name,age);
+  }
+
+  //继承
+  // var s1=new Student('杨振坤',19);
+  // console.log(s1);              //Student {name: '杨振坤', age: 19}
+  // s1.say_hi(); //拿不到这个方法
+
+  //使用拷贝继承
+  // for(var key in Person.prototype){
+  //     Student.prototype[key]=Person.prototype[key];
+  // }
+  //
+  // var s1=new Student('杨振坤',18);
+  // s1.say_hi();//你好
+
+
+  //原型继承【person的实例对象能够拿到方法，直接给student使用】
+  Student.prototype=new Person();
+  var s1=new Student('杨振坤',19);
+  s1.say_hi();//你好
+
+</script>
+</body>
+</html>

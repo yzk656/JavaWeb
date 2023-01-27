@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hidden{
+            display: block;
+        }
+
+        .items {
+            overflow: hidden;
+        }
+
+        .item {
+            border: 1px solid red;
+            height: 200px;
+            width: 25%;
+            float: left;
+
+        }
+        
+        @media screen and (max-width: 1200px){
+            .item{
+                width: 33.333333%;
+            }
+            .hidden{
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 960px){
+            .item{
+                width: 50%;
+            }
+            .hidden{
+                display: block;
+            }
+        }
+
+        @media screen and (max-width: 720px){
+            .item{
+                width: 100%;
+            }
+            .hidden{
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="items">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item hidden">4</div>
+    </div>
+</div>
+</body>
+</html>

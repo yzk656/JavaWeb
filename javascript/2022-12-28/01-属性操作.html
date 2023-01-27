@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li {
+            animation-duration: 1s;
+            /*animation-name:;*/
+        }
+
+        @keyframes move {
+            0% {
+
+            }
+            50% {
+                transform: translateY(-50%);
+            }
+            100% {
+                transform: translate(0);
+            }
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li title="li1" class="li-1">li1</li>
+    <li>li2</li>
+    <li>li3</li>
+    <li>li4</li>
+    <li>li5</li>
+    <li>li6</li>
+    <!--使用data-xx进行设置data属性-->
+    <li data-index="7" data-duration="5">li7</li>
+    <li>li8</li>
+</ul>
+<input type="checkbox" checked>
+<script src="../js/jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+        //prop通常用来设置获取checked selected disabled
+        // console.log($('input').prop('checked'));
+        console.log($('input').attr('checked'));
+        $('li').click(function () {
+            // $(this).attr({title:'新的title',index:'index'});
+            $(this).css({animationName: 'move'});
+            // console.dir(this);
+
+            //获取
+            console.log(this.dataset);
+            console.log(this.dataset['index']);
+            console.log(this.dataset.duration);
+
+            //设置
+            this.dataset['forwaard'] = true;
+            console.log(this.dataset);
+
+            console.log(this.dataset['duration']);
+            //可以将dataset中属性作为自己想要使用的属性
+            if (this.dataset['duration']) {
+                alert(111);
+                $(this).css({'animation-duration': this.dataset['duration'] + 's'});
+            }
+        });
+    });
+</script>
+</body>
+</html>

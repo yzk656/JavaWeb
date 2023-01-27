@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+</head>
+<body>
+
+<!--使用一个雷鸣为dropdown或btn-group的div包裹整个下拉框-->
+<div class="dropdown">
+  <!--使用button作为父菜单，使用类名  drop-down-toggle和自定义data-toggle属性-->
+  <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+    喜欢的频道
+    <!--设置下拉箭头-->
+    <span class="caret"></span>
+  </button>
+  <!--下拉菜单-->
+  <ul class="dropdown-menu">
+    <li class="dropdown-header">科普</li>
+    <li class="active"><a href="#" target="_blank">人与自然</a></li>
+
+    <!--分割线-->
+    <li class="divider"></li>
+
+    <li class="dropdown-header">搞笑</li>
+    <li><a href="#" target="_blank">欢乐喜剧人</a></li>
+    <li><a href="#" target="_blank">快乐大本营</a></li>
+    <li><a href="#" target="_blank">欢乐喜剧人</a></li>
+  </ul>
+</div>
+
+
+<script src="../js/jquery-1.12.4.js"></script>
+<script src="../bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

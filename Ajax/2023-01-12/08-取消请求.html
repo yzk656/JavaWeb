@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>点击发送</button>
+<script>
+    const btns = document.getElementsByTagName('button');
+    let xhr=null;
+
+    //标识变量
+    let is_sending=false;// 是否正在发送Ajax请求
+
+    btns[0].onclick = function () {
+        //判断标识变量
+        if(is_sending) xhr.abort();// 如果正在发送 则取消该请求，创建一个新的请求【会得到最新点击的那次回应】
+
+        xhr = new XMLHttpRequest();
+
+        //修改 标识变量的值
+        is_sending=true;
+
+        xhr.open('GET', 'http://127.0.0.1:3000/delay');
+        xhr.send();
+
+
+        xhr.onreadystatechange=function (){
+            if(xhr.readyState===4){
+                is_sending=false;
+            }
+        }
+    };
+
+    //取消使用到了xhr中的abort
+    btns[1].onclick=function (){
+        xhr.abort();
+    };
+</script>
+</body>
+</html>

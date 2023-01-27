@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" href="../fontello/css/fontello.css">
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      (function (doc, win) {
+        var docEl = doc.documentElement;
+        var designWidth = 720;
+        var baseWidth = 320;
+        var baseFontSize = 100;
+        var giveBaseWidth = 480;
+        var giveBaseFontSize = (giveBaseWidth / designWidth) * baseFontSize;
+        var resizeEvt =
+          "orientationchange" in win ? "orientationchange" : "resize";
+        recalc = function () {
+          var clientWidth = docEl.clientWidth || baseWidth;
+          if (clientWidth > designWidth) clientWidth = designWidth;
+          var fontSize = (baseFontSize * clientWidth) / designWidth;
+          fontSize = fontSize >= giveBaseFontSize ? giveBaseFontSize : fontSize;
+          docEl.style.fontSize = fontSize + "px";
+          docEl.style.opacity = 1;
+        };
+        doc.addEventListener &&
+          (win.addEventListener(resizeEvt, recalc, false),
+          doc.addEventListener("DOMContentLoaded", recalc, false));
+      })(document, window);
+      window.Tracker = {
+        events: [],
+        push: function (o) {
+          this.events.push(o);
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <div id="header">
+      <div class="container">
+        <div class="logo">
+          <a href="#">
+            <img src="../image/a5.png" alt="">
+          </a>
+        </div>
+        <div class="search">
+          <form action="#" method="post">
+            <button class="icon-search"></button>
+            <input type="search">
+          </form>
+        </div>
+        <div class="user-info">
+          <div class="user">
+            <span class="icon-user"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

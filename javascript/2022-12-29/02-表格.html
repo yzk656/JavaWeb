@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            border: 1px solid black;
+            width: 80%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>AGE</th>
+        <th>GENDER</th>
+        <th>DO</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+
+<input type="text" placeholder="请输入你的计划">
+<button>确定</button>
+
+<script src="../js/jquery-1.12.4.js"></script>
+<script>
+
+    $(function () {
+        var data = [
+            {id: 1, name: 'tom', age: 3, gender: '男'},
+            {id: 2, name: 'JERRY', age: 3, gender: '男'},
+            {id: 3, name: '小明', age: 3, gender: '男'},
+            {id: 4, name: '小兰', age: 3, gender: '女'},
+            {id: 5, name: '小芳', age: 3, gender: '女'},
+        ];
+
+        $.each(data, function (index, item) {
+            var html = `
+                <tr data-name="${item.name}" class="tr-name">
+                    <td>${item.id}</td>
+                    <td>${item.name}</td>
+                    <td>${item.age}</td>
+                    <td>${item.gender}</td>
+                    <td><a href="#" class="edit">编辑</a>|<a href="#" class="delete">删除</a></td>
+                </tr>
+            `;
+            // console.log(item,html);
+            $('tbody').append(html);
+        });
+
+        $('.delete').click(function (e) {
+            var name = $(this).parents('td').siblings().eq(1).html();
+            if (confirm('确认删除' + name + '?')) {
+                // console.log(this);
+                //不写dr会把整张表给删除
+                $(this).parents('tr').detach();
+            }
+        });
+    });
+
+
+</script>
+</body>
+</html>

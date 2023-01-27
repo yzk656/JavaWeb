@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>点击</button>
+<ul>
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+</ul>
+
+<script src="../js/jquery-1.12.4.js"></script>
+<script>
+  $(function (){
+    $('button').click(function (){
+      // $('ul li:first').css('background-color','lightblue');
+      // $('ul li:last').css('background-color','lightpink');
+      // $('ul li:eq(2)').css('background-color','red');
+      $('ul li:even').css('background-color','lightblue');
+      $('ul li:odd').css('background-color','lightpink');
+    });
+  });
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text">
+<button>添加</button>
+<ul>
+
+</ul>
+<script src="../js/jquery-1.12.4.js"></script>
+<script>
+    //这里面的status就是checkbox中选中或者非选中状态
+    // var data = [
+    //     {message: '吃饭', status: false},
+    //     {message: '树胶', status: true},
+    //     {message: '打豆豆', status: false}
+    // ];
+    // console.log(JSON.stringify(data));
+    var data = JSON.parse(localStorage.getItem('data'));
+
+    //第二参数只能是字符串，因此可以使用JSON将对象转换成字符串
+    // localStorage.setItem('data',JSON.stringify(data));
+
+
+    data.forEach(function (item) {
+        var oli = document.createElement('li');
+        oli.innerHTML = item.message;
+        document.querySelector('ul').append(oli);
+    });
+
+    $('button').click(function () {
+        $('ul').append(`<li>` + $('input').val() + `</li>`);
+
+        var obj = {message: $('input').val(), status: false};
+        data.push(obj);
+        localStorage.setItem('data', JSON.stringify(data));
+    });
+
+</script>
+</body>
+</html>

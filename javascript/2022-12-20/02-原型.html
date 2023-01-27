@@ -1,0 +1,29 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+
+    <script>
+      function Person(name){
+        this.name=name;
+      }
+
+      Person.prototype.abc="111";
+      Person.prototype.f1=function (){
+        console.log("原型上的方法");
+      }
+
+      var p1=new Person("yzk");
+      var p2=new Person("wxy");
+
+      console.log(Person.prototype===p2.__proto__);//true
+
+      console.log(p1.abc);
+      p1.f1();
+
+    </script>
+    </body>
+    </html>

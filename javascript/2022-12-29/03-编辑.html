@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" placeholder="请输入你的计划">
+<button>确定</button>
+<input type="checkbox" class="check_all">全选 <a href="#">删除</a>
+<ul>
+
+</ul>
+
+<script src="../js/jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+        $('button').click(function () {
+            var value = $('input').val();
+            var html = `
+                <li>
+                    <input type="checkbox" class="chk">${value} <a href="#" class="edit">编辑</a>|<a href="#">删除</a>
+                </li>
+            `;
+            $('ul').append(html);
+            $('input').val('');
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+            transition: all .3s;
+        }
+
+        a:hover {
+            color: #43bc60;
+        }
+
+        #header {
+            background-color: #eee;
+            display: flex;
+            position: relative;
+        }
+
+        #header .logo {
+            height: 60px;
+        }
+
+        #header .logo img {
+            height: 100%;
+        }
+
+        #header .nav {
+            display: flex;
+            flex: 1;
+            justify-content: space-between;
+        }
+
+        #header .nav ul {
+            display: flex;
+            align-items: center;
+        }
+
+        #header .nav li {
+            padding: 5px 15px;
+        }
+
+        @media screen and (max-width: 1024px) {
+            #header .nav .menu {
+                border: 1px solid #ccc;
+                background-color: #ddd;
+                padding: 5px 10px 0;
+                border-radius: 4px;
+                height: 32px;
+                margin-top: 14px;
+                margin-right: 15px;
+                /*display: none;*/
+            }
+
+            #header .menu span {
+                display: block;
+                width: 16px;
+                height: 3px;
+                background-color: #eee;
+                border-radius: 3px;
+                margin-bottom: 5px;
+            }
+
+            #header .nav ul {
+                display: none;
+            }
+
+            #header {
+                justify-content: space-between;
+            }
+
+            #header .nav {
+                flex: 0;
+                cursor: pointer;
+            }
+
+            #header .nav .nav_bar {
+                position: absolute;
+                display: none;
+                width: 100%;
+                left: 0;
+                top: 60px;
+                background-color: #fff;
+            }
+
+            #header .nav:hover .nav_bar {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="header">
+    <div class="logo">
+        <a href="index.html">
+            <img src="../image/5.png" alt="">
+        </a>
+    </div>
+    <div class="nav">
+        <div class="menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav_bar">
+            <li><a href="#">首页</a></li>
+            <li><a href="#">娜姐专区</a></li>
+            <li><a href="#">老冯专区</a></li>
+            <li><a href="#">静姐专区</a></li>
+            <li><a href="#">璐姐专区</a></li>
+            <li><a href="#">关于我们</a></li>
+        </ul>
+        <ul>
+            <li><a href="#">登录</a></li>
+            <li><a href="#">注册</a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

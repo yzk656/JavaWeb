@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container {
+            display: flex;
+        }
+
+        .item {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #ff6700;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2 class="page-header">点击</h2>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+</div>
+
+
+<script>
+    /*错误写法
+        因为这里虽然遍历了，但是没有点击，并没有触发，因此，当触发的时候
+        次数 i 已经为3 ，已经越界了
+    * */
+    // var items = document.querySelectorAll('.item');
+    // for (var i = 0; i < items.length; i++) {
+    //     items[i].onclick = function () {
+    //         items[i].style.background = 'pink';
+    //     }
+    // }
+
+    // 解决办法
+    var items = document.querySelectorAll('.item');
+    for (let i = 0; i < items.length; i++) {
+        items[i].onclick = function () {
+            items[i].style.background = 'pink';
+        }
+    }
+
+
+</script>
+</body>
+</html>

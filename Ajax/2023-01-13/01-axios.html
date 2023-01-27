@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/1.2.2/axios.js"></script>
+</head>
+<body>
+<button>GET</button>
+<button>POST</button>
+<button>AJAX</button>
+
+<script>
+    const btns = document.querySelectorAll('button');
+
+    //配置baseURL
+    axios.defaults.baseURL='http://127.0.0.1:3000';
+
+    btns[0].onclick = function () {
+        //Get请求
+        axios.get('/axios_server',{
+            //url参数
+            params:{
+              id:100,
+              vip:7
+            },
+
+            //请求头信息
+            headers:{
+                name:'yangzhenkun',
+                age:20
+            }
+        }).then(value => {
+            console.log(value);
+        });
+    };
+
+    btns[1].onclick=function (){
+        axios.post('/axios_server',{
+            username:'admin',
+            password:'admin'
+        },{
+            params: {
+                id:200,
+                vip:9
+            },
+            headers: {
+                name:'yang',
+                age:22
+            }
+        })
+    };
+
+    btns[2].onclick=function (){
+        axios({
+            //请求方法
+            method:'POST',
+
+
+            url:'/axios_server',
+            params:{
+                vip:10,
+                level:10
+            },
+            headers:{
+                a:100,
+                b:200
+            },
+            data:{
+                username:'admin',
+                password:'admin'
+            }
+        }).then(response=>{
+            alert(response.status);
+        });
+    };
+</script>
+</body>
+</html>

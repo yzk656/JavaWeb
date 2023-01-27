@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+</head>
+<body>
+    <div class="container">
+        <!--文本框-->
+        <div class="row">
+            <div class="col-md-3">
+                <input type="text" class="form-control">
+                <input type="text" class="form-control input-lg">
+                <input type="text" class="form-control input-sm">
+            </div>
+        </div>
+
+        <!--下拉框-->
+        <div class="row">
+            <div class="col-md-3">
+                <select class="form-control">
+                    <option value="">请选择城市</option>
+                    <option value="">北京</option>
+                    <option value="">上海</option>
+                </select>
+            </div>
+        </div>
+
+        <!--文本域-->
+        <div class="row">
+            <div class="col-md-3">
+                <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+            </div>
+        </div>
+
+        <!--复选框-->
+        <!--垂直显示-->
+        <div class="row">
+            <div class="col-md-3">
+                <div class="checkbox">
+                    <label for="">
+                        <input type="checkbox" name="hobby">唱歌
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label for="">
+                        <input type="checkbox" name="hobby">跳舞
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!--水平显示-->
+        <div class="row">
+            <div class="col-md-3">
+                <div class="checkbox-inline">
+                    <label for="">
+                        <input type="checkbox" name="hobby">唱歌
+                    </label>
+                </div>
+                <div class="checkbox-inline">
+                    <label for="">
+                        <input type="checkbox" name="hobby">跳舞
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!--单选框-->
+        <div class="row">
+            <div class="col-md-3">
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="sex">男
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="sex">女
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!--按钮-->
+        <button class="btn">按钮</button>
+        <button class="btn btn-danger">按钮</button>
+        <button class="btn btn-primary">按钮</button>
+        <button class="btn btn-info">按钮</button>
+        <button class="btn btn-success">按钮</button>
+        <button class="btn btn-default">按钮</button>
+        <button class="btn btn-warning">按钮</button>
+        <button class="btn btn-link">按钮</button>
+
+        <!--也可以把其他标签变成按钮-->
+        <a href="https://www.baidu.com" class="btn btn-success">a标签</a>
+        <span class="btn btn-danger">span标签</span>
+        <div class="btn btn-info">div标签</div>
+
+        <!--按钮大小-->
+        <a href="https://www.baidu.com" class="btn btn-success">a标签</a>
+        <span class="btn btn-danger btn-lg">span标签</span>
+        <div class="btn btn-info btn-sm">div标签</div>
+        <div class="btn btn-info btn-xs">div标签</div>
+        <!--按钮禁用-->
+        <!--可以组织js-->
+        <button class="btn btn-success" disabled="disabled" onclick="alert('111')">按钮</button>
+        <!--不能组织js的点击  只是样式上禁用了-->
+        <button class="btn btn-success disabled" onclick="alert('111')">按钮</button>
+    </div>
+</body>
+</html>

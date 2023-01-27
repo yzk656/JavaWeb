@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        li {
+            padding: 5px 0;
+        }
+
+        .lv2{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="menu">
+    <ul>
+        <li>
+            <a href="#">个人中心</a>
+            <ul class="lv2">
+                <li><a href="#">修改密码</a></li>
+                <li><a href="#">个人资料</a></li>
+                <li><a href="#">注销用户</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">新闻中心</a>
+            <ul class="lv2">
+                <li><a href="#">新闻列表</a></li>
+                <li><a href="#">添加新闻</a></li>
+                <li><a href="#">新闻分类</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">产品中心</a>
+            <ul class="lv2">
+                <li><a href="#">产品列表</a></li>
+                <li><a href="#">添加产品</a></li>
+                <li><a href="#">产品分类</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+
+<script src="../js/jquery-1.12.4.js"></script>
+<script>
+
+    $(function (){
+        $('.menu>ul>li').hover(function (){
+            //动画或者效果一旦触发就会执行，如果多次触发就会造成多个动画进行排队执行，因此我们就需要stop函数去停止之前的动画
+            $(this).find('.lv2').stop().slideToggle();
+        });
+    });
+
+
+</script>
+</body>
+</html>

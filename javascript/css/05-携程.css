@@ -1,0 +1,100 @@
+*{
+    box-sizing: border-box;
+}
+
+.xc{
+    width: 100%;
+    padding: 50px 10px 0;
+}
+.xc .search{
+    width: 100%;
+    height: 50px;
+    background-color: red;
+    /*padding: 3px 5px;*/
+    position: fixed;
+    top:0;
+
+    display: flex;
+}
+
+.xc .search input{
+    flex:1;
+    border-radius:35px;
+    margin: 3px 5px;
+}
+.xc .search .my{
+    height: 100%;
+    width: 70px;
+    background-color: pink;
+}
+/*search结束*/
+
+
+/*banner 开始*/
+.xc .banner{
+    width: 100%;
+    height: 170px;
+    background-color: lightblue;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.sc .banner img{
+
+}
+.xc .banner ul{
+    margin: 0;
+    list-style: none;
+    display: flex;
+}
+.xc .banner ul li{
+    flex:1;
+    flex-direction: column;
+    display: flex;
+
+    align-items: center;
+}
+.xc .banner ul li .img{
+    width: 30px;
+    height: 30px;
+    /*flex:1;*/
+    background-color: yellow;
+}
+.xc .banner ul li span{
+
+}
+
+/*project 开始*/
+.project{
+    margin: 10px 15px;
+    /*width: 100%;*/
+}
+
+.project .hotel{
+    height: 100px;
+    background-color: hotpink;
+    /*开启弹性布局后，span就没有行内块这一说了*/
+    display: flex;
+}
+
+.project .hotel span:nth-child(1){
+    width: 160px;
+    background-color: red;
+    height: 100%;
+}
+
+.project .hotel span:nth-child(2){
+    flex:1;
+}
+
+.project .hotel span:nth-child(3){
+    flex:2;
+}
+.project .ticket{
+
+}
+
+.project .ticket span{
+
+}

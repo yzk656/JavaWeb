@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+    <h2 class="page-header">Jquery发送Ajax请求</h2>
+    <button class="btn btn-primary">GET</button>
+    <button class="btn btn-danger">POST</button>
+    <button class="btn btn-info">通用型方法ajax</button>
+</div>
+
+
+<script>
+    $('button').eq(0).click(function () {
+        $.get('http://127.0.0.1:3000/jquery_server', {a: 100, b: 200}, function (data) {
+            console.log(data);
+        },'json');
+    });
+
+    $('button').eq(1).click(function () {
+        $.post('http://127.0.0.1:3000/jquery_server', {a: 100, b: 200}, function (data) {
+            console.log(data);
+        });
+    });
+
+    $('button').eq(2).click(function (){
+        $.ajax({
+            //url
+            url:'http://127.0.0.1:3000/jquery_server',
+            // url:'http://127.0.0.1:3000/delay',
+            //参数
+            data:{a:100,b:200},
+            //请求类型
+            type:'GET',
+            //响应体结果设置[目前不写输出的也是对象]
+            dataType:'json',
+            //成功的回调
+            success:function (data){//参数data 必须要写上
+                console.log(data);
+            },
+
+            //超时时间
+            timeout:2000,
+            //失败的回溯[超时或者网络异常]
+            error:function (){
+                alert('超时出错了！！！');
+            },
+
+            //设置头信息[路由规则需要设置特殊响应头]
+            headers:{
+                c:300,
+                d:400
+            }
+        });
+    });
+</script>
+</body>
+</html>

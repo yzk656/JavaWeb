@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #banner {
+            width: 1920px;
+            height: 600px;
+            position: relative;
+        }
+
+        .banner .item {
+            position: absolute;
+            display: none;
+        }
+
+        .pagination {
+            width: 100%;
+            position: absolute;
+            text-align: center;
+            bottom: 20px;
+        }
+
+        .pagination span {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 2px solid #fff;
+            margin-right: 10px;
+        }
+
+        .pagination span.active {
+            background-color: #ffffff;
+        }
+
+    </style>
+</head>
+<body>
+<div id="banner">
+    <div class="banner">
+        <div class="item">
+            <a href="#">
+                <img src="../image/1.png">
+            </a>
+        </div>
+        <div class="item">
+            <a href="#">
+                <img src="../image/2.png">
+            </a>
+        </div>
+        <div class="item">
+            <a href="#">
+                <img src="../image/3.jpg">
+            </a>
+        </div>
+        <div class="item">
+            <a href="#">
+                <img src="../image/4.png">
+            </a>
+        </div>
+    </div>
+    <div class="pagination">
+        <span class="active"></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+
+<script src="../js/jquery-1.12.4.js"></script>
+<script>
+
+    $(function () {
+        var index = 0;
+        var timer = null;
+
+        timer = setInterval(function () {
+            index++;
+            if (index >= $('#banner .item').length) {
+                index = 0;
+            }
+            $('.banner .item').eq(index).show().siblings().hide();
+            $('.pagination span').eq(index).addClass('active').siblings().removeClass('active');
+        }, 3000);
+        $('.banner .item').hover(function () {
+            clearInterval(timer);
+        }, function () {
+
+            timer = setInterval(function () {
+                index++;
+                if (index >= $('#banner .item').length) {
+                    index = 0;
+                }
+                $('.banner .item').eq(index).show().siblings().hide();
+                $('.pagination span').eq(index).addClass('active').siblings().removeClass('active');
+            }, 3000);
+        });
+
+        $('.pagination span').click(function () {
+            index = $(this).index();
+            $('.banner .item').eq(index).show().siblings().hide();
+            $('.pagination span').eq(index).addClass('active').siblings().removeClass('active');
+        });
+    });
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        #header {
+            height: 60px;
+            background-color: #000;
+        }
+
+        #banner {
+            height: 800px;
+            background-color: lightsalmon;
+        }
+
+        .nav-f {
+            position: fixed;
+            width: 100%;
+            height: 60px;
+            left: 0;
+            top: 0;
+            background-color: rgb(0, 0, 0, 0.6);
+        }
+
+        .selection {
+            height: 600px;
+            margin: 0 auto;
+            width: 1220px;
+        }
+
+        .selection:nth-child(1) {
+            background-color: red;
+        }
+
+        .selection:nth-child(2) {
+            background-color: green
+        }
+
+        .selection:nth-child(3) {
+            background-color: blue;
+        }
+
+        .selection:nth-child(4) {
+            background-color: yellow;
+        }
+
+        #footer {
+            height: 200px;
+            background-color: #000;
+        }
+
+        .back {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            padding: 10px;
+            background-color: #eee;
+            display: none;
+        }
+
+        .tool-bar {
+            position: fixed;
+            left: 100px;
+
+            /**垂直居中**/
+            top: 50%;
+            transform: translateY(-50%);
+
+            display: none;
+        }
+
+        .tool-bar .current {
+            background-color: #c81623;
+        }
+
+        .tool-bar li {
+            border: 1px solid #eee;
+            padding: 10px 15px;
+            cursor: pointer;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div id="header">
+    <nav>
+
+    </nav>
+</div>
+<div id="banner"></div>
+<div id="main">
+    <div class="selection"></div>
+    <div class="selection"></div>
+    <div class="selection"></div>
+    <div class="selection"></div>
+</div>
+
+<div id="footer"></div>
+
+<div class="back">back</div>
+
+<div class="tool-bar">
+    <ul>
+        <li class="current">家用电器</li>
+        <li>电脑办公</li>
+        <li>精品家居</li>
+        <li>手机通讯</li>
+    </ul>
+</div>
+
+<script src="../js/jquery-1.12.4.js"></script>
+<script>
+
+    $(function () {
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > $('#header').outerHeight()) {
+                $('nav').addClass('nav-f');
+            } else {
+                $('nav').removeClass('nav-f');
+            }
+
+            if ($(this).scrollTop() >= 300) {
+                $('.back').fadeIn();
+            } else {
+                $('.back').fadeOut();
+            }
+
+            //$('#main').offset()有两个值，top、left
+            // console.log($('#main').offset());
+
+            if ($(this).scrollTop() >= $('#main').offset().top) {
+                $('.tool-bar').fadeIn();
+            } else {
+                $('.tool-bar').fadeOut();
+            }
+
+            if ($(this).scrollTop() < $('#main .selection').eq(1).offset().top) {
+                $('.tool-bar li').eq(0).addClass('current').siblings().removeClass('current');
+            } else if ($(this).scrollTop() < $('#main .selection').eq(2).offset().top) {
+                $('.tool-bar li').eq(1).addClass('current').siblings().removeClass('current');
+            } else if ($(this).scrollTop() < $('#main .selection').eq(3).offset().top) {
+                $('.tool-bar li').eq(2).addClass('current').siblings().removeClass('current');
+            } else {
+                $('.tool-bar li').eq(3).addClass('current').siblings().removeClass('current');
+            }
+        });
+
+        $('.back').click(function () {
+            $('html,body').animate({scrollTop: 0});
+        });
+
+        $('.tool-bar li').click(function () {
+            var index = $(this).index();
+            var scroll_top = $('#main .selection').eq(index).offset().top;
+
+            $('html,body').animate({scrollTop: scroll_top});
+
+            $(this).addClass('current').siblings().removeClass('current');
+        });
+    });
+
+</script>
+</body>
+</html>

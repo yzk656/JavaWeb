@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /**
+     * 1. 变量不能重复声明
+     * */
+    // let a=1;
+    // let a=2;
+
+    //块级作用域【用var则没有影响】
+    //  if else while for
+    // {
+    //     let gril='1';
+    // }
+    // console.log(gril);
+
+//    3.不存在变量提升
+//     var a;
+//     console.log(a);
+//     a = 1;
+
+//     4. 不影响作用域链
+    {
+        let school='sc';
+        function fn(){
+            console.log(school);
+        }
+        fn();
+    }
+
+
+</script>
+</body>
+</html>

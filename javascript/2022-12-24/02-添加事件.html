@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>绑定事件</button>
+<button>解绑事件</button>
+
+<script>
+    var btn1 = document.querySelectorAll('button');
+    var fn = function () {
+        console.log(123);
+    }
+
+    btn1[0].addEventListener('click', fn);
+    btn1[0].addEventListener('click', function () {
+        console.log('456');
+    });
+    btn1[0].addEventListener('click', function () {
+        console.log('789');
+    });
+
+
+    btn1[1].onclick = function () {
+        btn1[0].removeEventListener('click', fn);
+    }
+
+
+</script>
+</body>
+</html>

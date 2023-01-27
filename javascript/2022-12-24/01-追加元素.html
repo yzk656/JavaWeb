@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>创建li</button>
+<button>删除li</button>
+<button>插入li</button>
+<button>替换li</button>
+<ul>
+    <li>我是li</li>
+</ul>
+
+<script>
+
+    var btn = document.querySelectorAll('button');
+    var ul = document.querySelector('ul');
+    btn[0].onclick = function () {
+        //创建一个新的li元素
+        var new_li = document.createElement('li');
+        //追加到ul中
+        ul.appendChild(new_li);
+        new_li.innerText = '我是新来的li';
+    };
+    btn[1].onclick = function () {
+        ul.removeChild(ul.firstChild);
+    };
+    btn[2].onclick = function () {
+        var new_li = document.createElement('li');
+        new_li.innerText = '我是新添加的li'
+        ul.insertBefore(new_li, ul.firstChild);
+    };
+    btn[3].onclick = function () {
+        var new_li = document.createElement('li');
+        new_li.innerText = '我是新替换的li';
+        ul.replaceChild(new_li, ul.firstChild);
+    }
+
+</script>
+</body>
+</html>

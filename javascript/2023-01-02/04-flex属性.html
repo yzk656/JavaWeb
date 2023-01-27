@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .box{
+      width: 820px;
+      height: 400px;
+      background-color: red;
+      display: flex;
+    }
+    .box .z1{
+      width: 120px;
+      height: 100px;
+      background-color: yellow;
+      /*控制的是当前元素 justify-content是通过父元素进行控制的*/
+      align-self: flex-end;
+    }
+    .box .z{
+      /*flex=1:所有子元素占一份，一共6个，每份1/6*/
+      flex: 1;
+      /*width: 100px;*/
+      height: 100%;
+      background-color: lightblue;
+    }
+
+    .box .z:nth-child(3){
+      order:-2;
+    }
+  </style>
+</head>
+<body>
+<!--行内如果有具体值的子元素，具体值生效-->
+<!--剩余子元素 flex 如果是百分数，按父元素宽高平均分配剩余空间-->
+<div class="box">
+<!--  <div class="z1">1</div>-->
+  <div class="z">2</div>
+  <div class="z">3</div>
+  <div class="z">4</div>
+  <div class="z">5</div>
+  <div class="z">6</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,372 @@
+* {
+    box-sizing: border-box;
+}
+
+.list-nostyle{
+    list-style: none;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+    transition: color .3s;
+}
+
+a:hover {
+    color: #ff6700;
+}
+
+.container::before,
+.container::after,
+.clearfix::before,
+.clearfix::after {
+    content: '';
+    display: table;
+}
+
+.container::after,
+.clearfix::after {
+    clear: both;
+}
+
+.container,
+.clearfix {
+    *zoom: 1;
+}
+
+.container {
+    width: 1226px;
+    margin: 0 auto;
+}
+
+#header .top {
+    background-color: #333;
+    color: white;
+    font-size: 12px;
+}
+
+#header .top a {
+    color: #eee;
+}
+
+#header .top-nav {
+    float: left;
+    color: #ccc;
+    padding: 10px 0px;
+}
+
+#header .cart-bar,
+#header .login-bar {
+    float: right;
+    padding: 10px 0;
+}
+
+#header .cart-bar {
+    padding: 10px 25px;
+    background-color: #666;
+    margin-left: 10px;
+    position: relative;
+    z-index: 99;
+}
+
+#header .cart-bar .cart {
+    position: absolute;
+    top: 33px;
+    right: 0;
+    width: 320px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    line-height: 100px;
+    font-size: 16px;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.5s;
+    z-index: -1;
+    background-color: #fff;
+}
+
+#header .cart-bar:hover {
+    color: #ff6700;
+    background-color: #fff;
+    transition: .3s;
+}
+
+#header .nav-bar{
+    height: 100px;
+}
+
+#header .logo,
+#header .nav{
+    float: left;
+}
+
+#header .search{
+    float: right;
+    margin-top: 30px;
+}
+
+#header .logo{
+    width: 56px;
+    height: 56px;
+    background: url("../image/10.png") no-repeat;
+    background-size: 56px 56px;
+    margin-top: 22px;
+}
+
+#header .search input,
+#header .search button{
+    float: left;
+    height: 40px;
+    padding: 10px;
+    color: #666;
+    outline: none;
+    transition: all 0.3s;
+}
+
+#header .search input{
+    font-size: 14px;
+    width: 240px;
+    border: 1px solid #e0e0e0;
+}
+
+#header .search button{
+    border: 1px solid #e0e0e0;
+    background-color: transparent;
+    /*可以去掉边框*/
+    margin-left: -1px;
+}
+
+#header .cart-bar:hover .cart {
+    height: 100px;
+}
+
+#header .search .list{
+    width: 240px;
+    border:1px solid #ff6700;
+    position: absolute;
+    transform:translateY(40px);
+    background-color: #fff;
+    margin-top: -1px;
+}
+
+#header .search .list ul{
+    list-style: none;
+    z-index: 10000;
+}
+
+.hidden-lg{
+    display: none;
+}
+
+/*响应式*/
+
+@media screen and (max-width: 1250px) {
+    .container{
+        padding: 0 15px;
+        width: 100%;
+    }
+
+    .goods .left{
+        width: 100%;
+    }
+
+    .left{
+        width: 100%;
+    }
+
+    .right{
+        width: 100%;
+    }
+
+    .hidden-lg{
+        display: block;
+    }
+
+    .visibility-lg{
+        display: none;
+    }
+
+    .hero{
+        flex-wrap:wrap;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .hidden{
+        display: none;
+    }
+    .hidden-lg{
+        display: block;
+    }
+
+    .visibility-lg{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hidden-lg{
+        display: block;
+    }
+
+    .visibility-lg{
+        display: none;
+    }
+}
+
+#header .nav-bar {
+    position: relative;
+    z-index: 99;
+    background-color: #fff;
+}
+
+#header .nav-bar .children {
+    width: 100%;
+    height: 0;
+    border-top: 2px solid #eee;
+    position: absolute;
+    left: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .15);
+    z-index: -2;
+    background-color: #fff;
+    transition: all .5s;
+}
+
+#header .nav-bar li:hover .children {
+    height: 200px;
+}
+
+#header .nav ul {
+    margin-top: 0;
+}
+
+#header .nav li {
+    float: left;
+    line-height: 100px;
+    padding: 0 15px;
+}
+
+.nav-bar > .container {
+    position: relative;
+}
+
+.category {
+    position: absolute;
+    left: 0;
+    top: 100px;
+    background-color: rgba(105, 101, 101, .6);
+}
+
+.category ul {
+    width: 234px;
+    padding: 20px 0;
+    transition: all .3s;
+}
+
+#header .category ul li {
+    width: 100%;
+    line-height: 42px;
+    float: none;
+}
+
+#header .category ul li a {
+    color: #fff;
+    padding-left: 15px;
+}
+
+#header .category > ul > li:hover {
+    background-color: #ff6700;
+}
+
+#header .category ul li .icon-right-open {
+    color: #fff;
+    float: right;
+    margin-right: 5px;
+}
+
+.tu {
+    float: right;
+}
+
+#header .category > ul .children1 {
+    position: absolute;
+    top: 0;
+    left: 234px;
+    height: 100%;
+    display: none;
+
+    background-color: #fff;
+}
+
+#header .category .children1 ul{
+    width: 248px;
+    padding: 0;
+}
+
+#header .category ul li:hover .children1{
+    display: block;
+}
+
+#header .category .children1 li{
+    line-height: 76px;
+}
+
+#header .category .children1 li span{
+    color: #000;
+    margin-top:0;
+}
+
+/*如何写一个宽高比例一定的盒子 更改屏幕宽度的时候 盒子的宽高比不变*/
+/*rem 布局 不同屏幕大小rem相对屏幕比例相同*/
+
+.main{
+    margin:30px auto;
+}
+
+.hero{
+    display: flex;
+    justify-content: space-between;
+    border:1px solid transparent;
+}
+
+.left{
+    width: 234px;
+    float: left;
+}
+
+.right{
+    width: 978px;
+    float: right;
+}
+
+.items{
+    display: flex;
+    justify-content: space-between;
+}
+
+.items .items-3{
+    width: 316px;
+}
+
+.items-3 img{
+    width: 100%;
+}
+
+.hero .left{
+    background-color: #5f5750;
+    color: #fff;
+    text-align: center;
+}
+
+.hero .kill span{
+    font-size: 24px;
+}
+
+.hero .kill{
+    line-height: 2;
+    margin-top: 1em;
+}
+
+.hero em{
+    font-size: 30px;
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+  var date ='2016-12-1';
+  //正则表达式中的（）作为分组1使用，获取分组匹配的结果用Regex.$1,$2,$3来获取
+  var reg=/(\d{4})-(\d{1,2})-(\d{1,2})/;
+  if(reg.test(date)){
+    console.log(RegExp.$1);//2016
+    console.log(RegExp.$2);//12
+    console.log(RegExp.$3);//1
+  }
+
+</script>
+</body>
+</html>

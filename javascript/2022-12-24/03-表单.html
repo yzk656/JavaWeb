@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <form action="#" method="post">
+        <button>点击</button>
+    </form>
+</div>
+
+
+<script>
+    document.querySelector('button').onclick = function (e) {
+        console.log(this);
+        console.log(e);
+    }
+    document.querySelector('button').onclick = function (e) {
+        e.stopPropagation();
+
+        //阻止你的默认行为，不会进行跳转
+        e.preventDefault();
+
+        console.log(this);
+        console.log(e);
+
+        // return false;
+    }
+
+
+</script>
+</body>
+</html>

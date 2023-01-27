@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .result {
+            width: 200px;
+            height: 100px;
+            border: 1px solid #ff6700;
+        }
+    </style>
+</head>
+<body>
+<div class="result">
+
+</div>
+<script>
+    const result=document.querySelector('.result');
+    window.onkeydown = function () {
+        const xhr = new XMLHttpRequest();
+
+        //设置响应体数据的类型
+        xhr.responseType='json';
+
+        xhr.open('GET', 'http://127.0.0.1:3000/json-server');
+        xhr.send();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    // console.log(xhr.response);
+                    // result.innerHTML=xhr.response;
+
+                    //手动对数据转换
+                    // let data=JSON.parse(xhr.response);
+                    // console.log(data);
+                    // result.innerHTML=data.name;
+
+
+                    //自动转换  23-24行
+                    console.log(xhr.response);
+                    result.innerHTML=xhr.response.name;
+                }
+            }
+        };
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li><a href="#">首页</a></li>
+    <li><a href="#">首页</a></li>
+    <li><a href="#">首页</a></li>
+    <li><a href="#">首页</a></li>
+    <li><a href="#">首页</a></li>
+    <li><a href="#">首页</a></li>
+    <li><a href="#">首页</a></li>
+</ul>
+<!--<input type="text">-->
+<hr>
+<button>点击</button>
+<input type="checkbox" value="抽烟">抽烟
+<input type="checkbox" value="喝酒">喝酒
+<input type="checkbox" value="烫头">烫头
+<input type="checkbox" value="打麻将">打麻将
+<script src="../js/jquery-1.12.4.js"></script>
+<script>
+    $(function (){
+        // console.log($('li').html());//<a href="#">首页</a>
+        // $('li').html('<a href="#">首页++</a>');
+        // $('li').text('<a href="#">首页++</a>');
+
+        $('input').keyup(function (){
+            console.log($(this).val());
+        });
+
+        $('button').click(function (){
+            //使其获得选中状态
+            $('input').val(['抽烟','喝酒']);
+        });
+    });
+</script>
+</body>
+</html>

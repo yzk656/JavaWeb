@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+<script src="../js/jquery-1.12.4.js"></script>
+<script>
+    window.onload=function (){
+        console.log(111);
+    };
+    window.onload=function (){
+        console.log(2222);
+    };
+    $(function (){
+        console.log(1);
+    });
+    $(function (){
+        console.log(2);
+    });
+
+
+    $(function (){
+        console.log($('ul li'));
+    });
+
+    //隐式迭代
+    $(function (){
+        //执行函数放在函数括号里面
+        $('ul li').click(function (){
+            alert('点击了li');
+        }).css('border','1px solid lightblue');
+    });
+</script>
+
+</body>
+</html>

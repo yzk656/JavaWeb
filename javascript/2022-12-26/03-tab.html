@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .tab_items ul {
+            display: flex;
+        }
+
+        .tab_items li {
+            width: 40px;
+            height: 40px;
+            background-color: hotpink;
+            margin-right: 10px;
+        }
+
+        .tab_items .tab_active {
+            background-color: red;
+        }
+
+        .tab_content div {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            background-color: palegreen;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div class="tabs">
+    <div class="tab_items">
+        <ul>
+            <li class="tab_active">tab1&nbsp;</li>
+            <li>tab2&nbsp;</li>
+            <li>tab3&nbsp;</li>
+        </ul>
+    </div>
+    <div class="tab_content">
+        <div class="tab_con" style="display: block">1</div>
+        <div class="tab_con">2</div>
+        <div class="tab_con">3</div>
+    </div>
+</div>
+<script src="../js/jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+        $('.tab_items li').click(function () {
+            $(this).addClass('tab_active').siblings().removeClass('tab_active');
+            $('.tab_con').eq($(this).index()).show().siblings().hide();
+        });
+    });
+</script>
+</body>
+</html>

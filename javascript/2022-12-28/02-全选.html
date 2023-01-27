@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>
+            <input type="checkbox" class="check_all">全选
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" class="chk">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" class="chk">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" class="chk">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" class="chk">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" class="chk">
+        </td>
+    </tr>
+</table>
+<script src="../js/jquery-1.12.4.js"></script>
+<script>
+
+    $(function () {
+        $('.check_all').click(function () {
+            console.log($(this).prop('checked'));
+            $('.chk').prop('checked', $(this).prop('checked'));
+        });
+        $('.chk').click(function () {
+            //$('.chk:checked')：用来获取chk中checked的属性有多少个
+            if ($('.chk').length != $('.chk:checked').length) {
+                $('.check_all').prop('checked', false);
+            }else {
+                $('.check_all').prop('checked', true);
+            }
+        });
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--用于响应式设计-->
+        <meta name="viewport"
+              content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+        <title>Title</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+
+        .container {
+            height: 60px;
+            width: 1200px;
+            margin: 0 auto;
+            background-color: lightblue;
+        }
+
+        /**
+            width:device-width  查询屏幕宽度
+            initial-scale       初始缩放
+            user-scalable       是否允许用户缩放
+            maximum-scale       最大缩放
+            minimum-scale       最小缩放
+         */
+        /*@media screen and (max-width: 1200px) {*/
+        /*    .container {*/
+        /*        width: 1024px;*/
+        /*        background-color: lightcoral;*/
+        /*    }*/
+        /*}*/
+
+        /*@media screen and (max-width: 1024px) {*/
+        /*    .container {*/
+        /*        width: 960px;*/
+        /*        background-color: lightgreen;*/
+        /*    }*/
+        /*}*/
+
+        /*    @media screen and (max-width: 720px) {*/
+        /*        .container {*/
+        /*            width: 100%;*/
+        /*            background-color: lightpink;*/
+        /*        }*/
+        /*    }*/
+
+
+
+            @media (min-width:768px ){
+                .container{
+                    width: 750px;
+                    background-color: blue;
+                }
+            }
+
+            @media (min-width:992px ){
+                .container{
+                    width: 970px;
+                    background-color: green;
+                }
+            }
+
+            @media (min-width:1200px ){
+                .container{
+                    width: 1170px;
+                    background-color: red;
+                }
+            }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>卢卡</h1>
+</div>
+
+
+</body>
+</html>

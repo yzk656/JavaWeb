@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script src="../js/jquery-1.12.4.js"></script>
+<script>
+
+    $(function (){
+       // $(document).on('mouseenter click',function (){
+       //     console.log(123);
+       // });
+
+        //使用{}包括，使用，分割
+        $(document).on({
+            mouseenter:function (){
+                console.log(1);
+            },
+            click:function (){
+                console.log(2);
+            }
+        });
+    });
+
+
+</script>
+</body>
+</html>
