@@ -3,6 +3,7 @@ const express=require('express');
 /*创建路由对象*/
 const router=express.Router();
 
+/*挂在具体的路由*/
 router.get('/user/list',function(req,res){
     res.send('Get user list.');
 })
