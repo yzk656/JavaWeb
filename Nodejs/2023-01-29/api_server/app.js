@@ -48,6 +48,11 @@ app.use('/my',userinfo_router);
 const art_cate_router=require('./router/artcate');
 app.use('/my/article',art_cate_router);
 
+/*导入并使用文章路由模块*/
+const article_router=require('./router/article');
+/*为文章的路由挂载统一的访问前缀*/
+app.use('/my/article',article_router);
+
 /*错误中间件*/
 app.use((err, req, res, next) => {
     /*数据验证失败*/

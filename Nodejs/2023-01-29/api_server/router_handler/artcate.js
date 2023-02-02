@@ -1,5 +1,5 @@
 /**
- * 这里定义文章模块，供 ./router/artcate 使用
+ * 这里定义文章分类模块，供 ./router/artcate 使用
  */
 
 /*导入数据库操作模块*/
@@ -76,7 +76,7 @@ exports.delete_cate_id = (req, res) => {
 
 /*根据 ID 获取文章分类的处理函数*/
 exports.get_artcate_id = (req, res) => {
-    const search_article_sql = `select * from ev_article_cate where id=?`;
+    const search_article_sql = `select * from ev_article_cate where id=? and is_delete=0`;
     db.query(search_article_sql, req.params.id, (err, results) => {
         /*执行 SQL 语句失败*/
         if (err)
@@ -97,7 +97,7 @@ exports.get_artcate_id = (req, res) => {
 /*更新文章分类处理函数*/
 exports.update_cate_id = (req, res) => {
     /*查询 分类名称与分类别名 是否被占用*/
-    const search_data_sql = `select * from ev_article_cate where id=? and (name=? or alias=?)`;
+    const search_data_sql = `select * from ev_article_cate where id!=? and (name=? or alias=?)`;
     db.query(search_data_sql, [req.body.id, req.body.name, req.body.alias], (err, results) => {
         /*执行 SQL 语句失败*/
         if (err)
@@ -129,3 +129,4 @@ exports.update_cate_id = (req, res) => {
         });
     })
 }
+
